@@ -1,0 +1,41 @@
+######### Metalink (c) #####################
+######### Standard header begin ############
+
+## TOPDIR may be set. It points to the top directory where all the E_* variables are in Makefiles.MTLK.vars
+
+ifdef E_TOPDIR
+include $(E_TOPDIR)/scripts/Makefile.MTLK.vars
+else
+$(error "E_TOPDIR doesn't defined")
+endif
+
+######### Standard header end ##############
+
+
+#CROSS_COMPILE=/opt/star/tools/arm-uclibc-3.4.6/bin/arm-linux-uclibc-
+CC=$(E_CC)
+CFLAGS=-Os -I/$(E_TOPDIR)/l/openssl/include/
+LIBS=-L$(E_TOPDIR)/l/openssl 
+STRIP=$(E_STRIP)
+export CC CFLAGS LIBS STRIP
+
+
+
+CONF:
+	echo "No configure needed "
+COMP:
+	make -f Makefile
+
+CLEAN:
+	make -f Makefile clean
+
+INSTALL: FORCE
+	#nstall -d 755 $(E_DEST)/rootfs-star_/root/mtlk/etc
+	install -m 666 -D template.conf $(E_DEST)/root/mtlk/etc/template.conf
+	install -m 755 -D hostapd $(E_DEST)/root/mtlk/etc/hostapd
+	install -m 755 -D hostapd_cli $(E_DEST)/root/mtlk/etc/hostapd_cli
+
+STRIP: FORCE
+	$(E_STRIP) $(E_DEST)/root/mtlk/etc/hostapd
+
+FORCE:

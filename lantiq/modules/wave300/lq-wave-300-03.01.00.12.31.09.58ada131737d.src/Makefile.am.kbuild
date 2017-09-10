@@ -1,0 +1,5 @@
+# $Id$
+
+include $(abs_top_srcdir)/Makefile.am.common
+
+MTLK_TARGET_DRIVER_CPPFLAGS = $(MTLK_COMMON_CPPFLAGS)

@@ -1,0 +1,5 @@
+build_prep:
+	cd ../lantiq && make tools/bison/install
+	cd ../lantiq && make tools/sed/install
+	cd ../lantiq && make tools/squashfs4/install
+	cd ../lantiq && make toolchain/install

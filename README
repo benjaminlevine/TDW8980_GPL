@@ -1,0 +1,30 @@
+TP-LINK GPL code readme
+ 
+1. This package contains all GPL code used by TP-LINK DSL Routers with Linux OS.
+2. All components have been built successfully on Redhat Enterprise Linux 4.0 Workstation. 
+3. Compiling components in this package on platforms other than Redhat Enterprise Linux 4.0 Workstation may cause unexpected results. 
+4. Recommended using "root" or "sudo" command to build the code. 
+5. After building the code, you will get the uboot and linux kernel image, then you can make rootfs with mksquashfs too, but you can't upgrade these images to your router through web management page. 
+ 
+Build Instructions 
+1. All build targets are in ./GPL_TD-W8980/build/, you should enter this directory to build components. 
+2. Build toolchain and tools.
+	 make -f Makefile.prep 
+3. Build components: 
+    1)Build u-boot bootloader
+        make boot_build
+     
+    2)Build linux kernel image
+        make kernel_build
+ 
+    3)Build some kernel modules, such as netfilter, netsched.
+        make modules_build
+  
+    4)Build some application, such as busybox, iptables and so on.
+        make apps_build
+		
+    5)Build some wireless support software, such as hostapd, wpa supplicant.
+        make wlan_build
+			
+	6)Build rootfs
+		make fs_build

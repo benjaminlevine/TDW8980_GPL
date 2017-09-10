@@ -1,0 +1,107 @@
+include $(abs_top_srcdir)/Makefile.am.kbuild
+EXTRA_CFLAGS += $(MTLK_TARGET_DRIVER_CPPFLAGS)
+
+EXTRA_CFLAGS+=$(MTLK_CFLAGS)
+
+obj-m := $(MODULE_NAME).o
+
+mtlk-objs := drv_info.o core.o debug.o mcast.o utils.o osal_defs.o proc_aux.o l2nat.o nlmsgs.o compat.o ioctl.o \
+   wpa.o \
+   aocs_osdep.o dfs_osdep.o scan_osdep.o addba_osdep.o mib_osdep.o flctrl_osdep.o \
+   aocshistory_osdep.o mtlkirbm_k.o mtlk_eq_osdep.o progmodel.o log_osdep.o \
+   mtlk_sq_osdep.o \
+   $(driver_shared_builddir)/hw_mmb.o \
+   $(driver_shared_builddir)/mtlkmib.o \
+   $(driver_shared_builddir)/txmm.o \
+   $(driver_shared_builddir)/addba.o \
+   $(driver_shared_builddir)/frame.o \
+   $(driver_shared_builddir)/mtlkaux.o \
+   $(driver_shared_builddir)/mtlkflctrl.o \
+   $(driver_shared_builddir)/cache.o \
+   $(driver_shared_builddir)/rod.o \
+   $(driver_shared_builddir)/stadb.o \
+   $(driver_shared_builddir)/iperf_debug.o \
+   $(driver_shared_builddir)/aocshistory.o \
+   $(driver_shared_builddir)/mtlk_snprintf.o \
+   $(driver_shared_builddir)/mtlkqos.o \
+   $(wireless_shared_builddir)/mtlkstartup.o \
+   $(driver_shared_builddir)/mtlk_eq.o \
+   $(wireless_shared_builddir)/mtlkirb.o \
+   $(wireless_shared_builddir)/pattern.o \
+   $(wireless_shared_builddir)/mtlk_algorithms.o \
+   $(driver_shared_builddir)/bitrate.o \
+   $(driver_shared_builddir)/mtlk_sq.o \
+   $(driver_shared_builddir)/mtlk_coc.o \
+ #  $(rflib_builddir)/mtlk_rflib.a
+
+mtlk-includes := $(driver_shared_builddir) \
+                 $(wireless_shared_builddir) \
+                 $(wireless_builddir)/shared_mac \
+                 .
+
+ifeq ($(CONFIG_HW_PCI),y)
+  mtlk-objs += hw_pci.o $(driver_shared_builddir)/mtlk_pcie_ccr.o
+endif
+
+ifeq ($(CONFIG_ENABLE_OBJPOOL), y)
+  mtlk-objs += $(wireless_shared_builddir)/mem_leak.o $(wireless_shared_builddir)/mtlk_objpool.o
+endif
+
+# check whether antenna selection stuff should be compiled
+ifeq ($(CONFIG_RF_MANAGEMENT_MTLK),y)
+  $(warning Metalink RF MGMT is ON)
+  mtlk-objs += $(driver_shared_builddir)/mtlkasel.o
+else
+  $(warning Metalink RF MGMT is OFF)
+endif
+
+ifeq ($(CONFIG_IRB_DEBUG),y)
+  $(warning CONFIG_IRB_DEBUG is enabled...)
+  mtlk-objs += $(driver_shared_builddir)/mtlk_irb_pinger.o mtlk_dbg_osdep.o
+endif
+
+ifeq ($(CONFIG_CPU_STAT),y)
+  $(warning CPU Statistics enabled! Driver is for debugging purposes only!)
+  mtlk-objs += $(driver_shared_builddir)/cpu_stat.o mtlk_dbg_osdep.o
+endif
+
+ifeq ($(CONFIG_RT_LOGGER_FUNCTIONS),y)
+  mtlk-objs += logmacros.o
+endif
+
+ifeq ($(CONFIG_HW_PCI),y)
+
+ifeq "$(MMB_OPS)" ""
+$(warning MMB_OPS is not defined! Forcing 'DEFAULT'...)
+MMB_OPS:=DEFAULT
+endif
+
+ifeq "$(MMB_OPS)" "DEFAULT"
+$(warning Defaults are used for MMB access)
+else
+$(warning $(MMB_OPS) MMB ACCESS USED - CAREFULLY CHECK ON CUSTOMER PLATFORMS)
+endif
+
+EXTRA_CFLAGS += -DMMB_USE_KERNEL_$(MMB_OPS)_OPS
+
+endif
+
+# LOG_ORIGIN_ID definition is mandatory for the Logger.
+# WARNING: ORIGIN_ID = 0 means Driver.
+# Other components (MAC, apps etc.) must be compiled with other OIDs.
+EXTRA_CFLAGS += -DLOG_ORIGIN_ID=0
+
+export EXTRA_CFLAGS
+
+# some Fedora kernels have wireless-pending changes (including 
+# iwe_stream_add_* prototypes change) merged much earlier than
+# mainline. if the kernel looks likes Fedora one, try to provide
+# compatibility
+ifneq (,$(strip $(findstring .fc, $(KERNELRELEASE))))
+  ifneq (,$(strip $(wildcard $(obj)/fedora_iwe_stream_add_fix.kbuild)))
+    include $(obj)/fedora_iwe_stream_add_fix.kbuild
+  endif 
+endif
+
+
+include $(abs_top_srcdir)/Makefile.am.module_rebase

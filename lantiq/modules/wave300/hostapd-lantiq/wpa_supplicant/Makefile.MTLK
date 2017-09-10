@@ -1,0 +1,39 @@
+######### Metalink (c) #####################
+######### Standard header begin ############
+
+## TOPDIR may be set. It points to the top directory where all the E_* variables are in Makefiles.MTLK.vars
+ifdef E_TOPDIR
+include $(E_TOPDIR)/scripts/Makefile.MTLK.vars
+else
+$(error "E_TOPDIR doesn't defined")
+endif
+
+######### Standard header end ##############
+
+CFLAGS=-Os -I$(E_TOPDIR)/l/openssl/include 
+CC=$(E_CC)
+LIBS=-L$(E_TOPDIR)/l/openssl
+LIBS_p=-L$(E_TOPDIR)/l/openssl
+STRIP=$(E_STRIP)
+export CC CFLAGS LIBS LIBS_p STRIP
+
+CONF:
+	echo No configuration here
+COMP:
+	make all
+
+CLEAN:
+	make clean
+
+INSTALL: FORCE
+	install -D -m 755 wpa_supplicant $(E_DEST)/root/mtlk/etc/wpa_supplicant
+	install -D -m 755 wpa_passphrase $(E_DEST)/root/mtlk/etc/wpa_passphrase
+	install -D -m 755 wpa_cli $(E_DEST)/root/mtlk/etc/wpa_cli
+STRIP:
+	$(E_STRIP) $(E_DEST)/root/mtlk/etc/wpa_supplicant
+	$(E_STRIP) $(E_DEST)/root/mtlk/etc/wpa_passphrase
+	$(E_STRIP) $(E_DEST)/root/mtlk/etc/wpa_cli
+
+FORCE:
+
+	

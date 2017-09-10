@@ -1,0 +1,11 @@
+--- squashfs3.2-r2/squashfs-tools/Makefile	2010-10-01 13:00:01.705135003 +0530
++++ squashfs3.2-r2.lq_patched/squashfs-tools/Makefile	2010-10-01 13:01:13.653130245 +0530
+@@ -9,7 +9,7 @@
+ DebugFlags = -g -Wall -Wno-unused-variable -O0 -UNDEBUG
+ endif
+ CFLAGS += -D_REENTRANT -DNDEBUG ${DebugFlags}
+-LDLIBS += -lz -L${LzmaAlone} -L${LzmaC}
++LDLIBS += -lz -L${LzmaAlone} -L${LzmaC} -lm
+ Tgt = mksquashfs unsquashfs
+ 
+ all: ${Tgt}

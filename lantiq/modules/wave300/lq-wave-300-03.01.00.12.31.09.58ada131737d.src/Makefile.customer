@@ -1,0 +1,48 @@
+###########################################################################
+#
+# Example customer's makefile.
+#
+###########################################################################
+
+APP_TOOLCHAIN_DIR=
+KERNEL_DIR=
+KERNEL_CROSS_COMPILE=
+CONFIG_FILE_NAME=
+RELEASE_DIR=
+
+ifeq (x$(APP_TOOLCHAIN_DIR), x)
+$(error APP_TOOLCHAIN_DIR variable can not be empty)
+endif
+
+ifeq (x$(KERNEL_DIR), x)
+$(error KERNEL_DIR variable can not be empty)
+endif
+
+ifeq (x$(KERNEL_CROSS_COMPILE), x)
+$(error KERNEL_CROSS_COMPILE variable can not be empty)
+endif
+
+ifeq (x$(CONFIG_FILE_NAME), x)
+$(error CONFIG_FILE_NAME variable can not be empty)
+endif
+
+ifeq (x$(RELEASE_DIR), x)
+$(error RELEASE_DIR variable can not be empty)
+endif
+
+export APP_TOOLCHAIN_DIR KERNEL_DIR KERNEL_CROSS_COMPILE
+
+all:
+	make
+
+release:
+	./support/release/build-platform.sh $(CONFIG_FILE_NAME) $(RELEASE_DIR) wls
+
+release_driver:
+	./support/release/build-platform.sh $(CONFIG_FILE_NAME) $(RELEASE_DIR) driver
+
+release_mttools:
+	./support/release/build-platform.sh $(CONFIG_FILE_NAME) $(RELEASE_DIR) mttools
+
+%:
+	@make $@

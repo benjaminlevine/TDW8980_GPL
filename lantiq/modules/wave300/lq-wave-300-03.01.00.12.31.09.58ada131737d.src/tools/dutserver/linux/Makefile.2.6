@@ -1,0 +1,10 @@
+
+CC = gcc
+#PATH := $(PATH):...
+CFLAGS = -g -fno-common -fno-builtin -Wall  -Dlinux -D__linux__ -Dunix -DDUT_IMAGES_DIR="\"/lib/firmware/d\""
+INCLUDE =
+LIBPATH = -lpthread
+LIB =
+
+include Makefile.inc
+

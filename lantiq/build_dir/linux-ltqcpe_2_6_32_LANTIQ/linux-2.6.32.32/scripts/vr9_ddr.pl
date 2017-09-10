@@ -1,0 +1,1 @@
+../../../../target/linux/ltqcpe/files/scripts/vr9_ddr.pl

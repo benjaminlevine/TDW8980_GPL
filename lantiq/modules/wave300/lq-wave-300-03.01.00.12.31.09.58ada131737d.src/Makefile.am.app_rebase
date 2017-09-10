@@ -1,0 +1,19 @@
+# $Id$
+
+AM_CPPFLAGS += $(addprefix -I,$(subst $(abspath $(abs_top_srcdir)),$(rebase_root)/, $(abspath $($(rebase_component)_INCLUDES))))
+MKDEP_FILES:=$(subst $(rebase_root),$(top_srcdir),$(SOURCES))
+MKDEP_CFLAGS:=$(subst $(rebase_root),$(top_srcdir),$(CFLAGS) $(CPPFLAGS) $(AM_CPPFLAGS))
+
+$(rebased_sources)%:: $(abs_srcdir)%
+	@echo Preprocessing sources...
+	@mkdir -p $(rebase_root)
+	@touch $(rebase_root)/.depend
+	@touch -a $(srcdir)/logmacros.h
+	@touch -a $(srcdir)/logmacros.c
+	@$(driver_linux_srcdir)/mkdep -c "$(CC)" -f $(rebase_root)/.depend -DMKDEP $(MKDEP_CFLAGS) $(MKDEP_FILES)
+	@$(abs_top_srcdir)/support/mkhlpr.sh $(rebase_root)/.depend $(abs_top_srcdir) $(abs_top_builddir) $(rebase_root) $(rebase_component)
+	@echo "  Done."
+
+clean-local: rm_rebase_root
+rm_rebase_root:
+	rm -rf $(rebase_root)

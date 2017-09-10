@@ -1,0 +1,4 @@
+config LANTIQ_UBOOT_vr9
+bool
+default y
+source scripts_platform/Kconfig

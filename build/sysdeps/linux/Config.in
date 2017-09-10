@@ -1,0 +1,325 @@
+#
+# For a description of the syntax of this configuration file,
+# see scripts/kbuild/config-language.txt.
+#
+
+mainmenu "Lettuce Configuration"
+
+config HAVE_DOT_CONFIG
+	bool
+	default y
+
+menu "General Configuration"
+
+choice
+	prompt "CPU Type"
+	default INCLUDE_CPU
+	help
+	  Choose CPU type
+
+config INCLUDE_CPU_TC3162U
+	bool "Ralink TC3162U"
+
+config INCLUDE_CPU_TC3182
+	bool "Ralink TC3182"
+
+config INCLUDE_CPU_RTL8672
+	bool "Realtek RTL8672"
+
+config INCLUDE_CPU_VR268
+	bool "Lantiq VR268"
+	
+endchoice
+	
+config KERNEL_MAX_SIZE 
+    string "Kernel bin max size" 
+    default "0x110000" 
+
+choice
+	prompt "Product language"
+	default INCLUDE_LANGUAGE
+	help
+	  Choose language type
+
+config INCLUDE_LANGUAGE_CN
+	bool "Chinese language"
+
+config INCLUDE_LANGUAGE_EN
+	bool "English language"
+
+endchoice
+
+choice
+	prompt "ETH Type"
+	default INCLUDE_ETH_UNKNOW
+
+config INCLUDE_ETH_LTQ
+	bool "Build Lantiq ethernet"
+	default n
+	
+config INCLUDE_ETH_RA
+	bool "Build Ralink ethernet"
+	default n
+endchoice
+
+config INCLUDE_DIGITAL_SIGNATURE
+	bool "Digital signature"
+	default n
+	
+config INCLUDE_WATCHDOG
+	bool "Enable watchdog"
+	default n
+
+config INCLUDE_PPA_ACCELERATE
+	bool "Enable Lantiq PPA accelerate"
+	default n
+	
+config INCLUDE_TEST
+	bool "test config by yangxv"
+	default n
+
+endmenu
+
+#source archival/Config.in
+
+#
+# Wireless options
+#
+menu 'Wireless Options'
+
+config INCLUDE_LAN_WLAN
+	bool "Build wireless"
+	default n
+	
+config INCLUDE_LAN_WLAN_MSSID
+	bool "Build wireless Multi-SSID"
+	depends on INCLUDE_LAN_WLAN
+	default n
+
+config INCLUDE_LAN_WLAN_WDS
+	bool "Build wireless WDS"
+	depends on INCLUDE_LAN_WLAN
+	default n
+	
+choice
+	prompt "WIFI Type"
+	default INCLUDE_WLAN_UNKNOW
+	depends on INCLUDE_LAN_WLAN
+
+config INCLUDE_WLAN_RA
+	bool "Build Ralink WIFI"
+	depends on INCLUDE_LAN_WLAN
+	default n
+	
+config INCLUDE_WLAN_RTL
+	bool "Build Realtek WIFI"
+	depends on INCLUDE_LAN_WLAN
+	default n
+
+config INCLUDE_WLAN_ATH
+	bool "Build Atheros WIFI"
+	depends on INCLUDE_LAN_WLAN
+	default n
+	
+endchoice
+	
+endmenu
+
+menu 'IPv6 Options'
+	
+config INCLUDE_IPV6
+	bool "Build IPV6"
+	default n
+	
+config INCLUDE_IPV6_RADVD
+	bool "Build IPV6 RADVD"
+	default n
+	depends on INCLUDE_IPV6
+	
+config INCLUDE_IPV6_FLEX
+	bool "Build IPV6 FLEX"
+	default n
+	depends on INCLUDE_IPV6
+	
+config INCLUDE_IPV6_DHCPV6
+	bool "Build IPV6 DHCPV6"
+	default n
+	depends on INCLUDE_IPV6
+	
+config INCLUDE_IPV6_PPPV6
+	bool "Build IPV6 PPPV6"
+	default n
+	depends on INCLUDE_IPV6
+	
+config INCLUDE_IPV6_TUNNEL
+	bool "Build IPV6 TUNNEL"
+	default n
+	depends on INCLUDE_IPV6
+
+config INCLUDE_IPV6_SLAAC
+	bool "Build WAN6 Support SLAAC Mode"
+	default n
+	depends on INCLUDE_IPV6
+
+config INCLUDE_IPV6_HTTP
+	bool "Build IPV6 Support Web Server And Telnet"
+	default n
+	depends on INCLUDE_IPV6
+endmenu
+	
+menu 'USB options'
+
+config INCLUDE_USB
+	bool "Build USB"
+	default n
+	
+config INCLUDE_USB_3G_DONGLE
+	bool "Build USB 3G dongle"
+	default n
+	depends on INCLUDE_USB
+	
+config INCLUDE_USB_OVER_IP
+	bool "Build USB over IP"
+	default n
+	depends on INCLUDE_USB
+
+config INCLUDE_USB_STORAGE
+	bool "Build USB storage"
+	default n
+	depends on INCLUDE_USB
+	
+config INCLUDE_USB_MEDIA_SERVER
+	bool "Build USB DLNA"
+	default n
+	depends on INCLUDE_USB_STORAGE
+	
+config INCLUDE_USB_SAMBA_SERVER
+	bool "Build USB Samba Server"
+	default n
+	depends on INCLUDE_USB_STORAGE
+
+config INCLUDE_USB_FTP_SERVER
+	bool "Build USB Ftp server"
+	default n
+	depends on INCLUDE_USB_STORAGE
+
+	
+endmenu
+
+menu 'Function Options'
+
+config INCLUDE_WAN_MODE
+	bool "build system mode"
+	default y
+
+config INCLUDE_QOS
+	bool "build QoS"
+	default n
+	
+config INCLUDE_SSL
+	bool "build openSSL"
+	default n
+	
+config INCLUDE_IPSEC
+	bool "build IPSec"
+	default n
+
+config INCLUDE_CWMP
+	bool "build cwmp/TR069"
+	default n
+
+config INCLUDE_CWMP_SSL
+	bool "build SSL cwmp/TR069"
+	default n
+	depends on INCLUDE_CWMP && INCLUDE_SSL
+	
+config INCLUDE_RIP
+	bool "Build rip"
+	default n
+
+config INCLUDE_SNMP
+	bool "Build snmp"
+	default n
+
+config INCLUDE_DDNS
+	bool "Build DDNS"
+	default n
+	
+config INCLUDE_DDNS_PH
+	bool "Build oray DDNS"
+	default n
+	depends on INCLUDE_DDNS
+	
+config INCLUDE_DYNDNS
+	bool "Build dyn DDNS"
+	default n
+	depends on INCLUDE_DDNS
+	
+config INCLUDE_NOIPDNS
+	bool "Build NO-ip DDNS"
+	default n
+	depends on INCLUDE_DDNS
+	
+config INCLUDE_IPTV
+	bool "Build IPTV"
+	default n
+	
+config INCLUDE_IGMP
+	bool "Build IGMP"
+	default n
+
+config INCLUDE_AUTO_PVC
+	bool "Build auto PVC"
+	default n
+
+config INCLUDE_ETHERNET_WAN
+	bool "Build ethernet WAN"
+	default n
+	
+config INCLUDE_BRIDGING
+	bool "Build bridging"
+	default n
+
+config INCLUDE_ADSLWAN
+	bool "Build DSL"
+	default n
+
+choice
+	prompt "ADSL Type"
+	default INCLUDE_ADSL_UNKNOW
+	depends on INCLUDE_ADSLWAN
+
+config INCLUDE_ADSL_RA
+	bool "Build Ralink DSL"
+
+config INCLUDE_ADSL_RTL
+	bool "Build Realtek DSL"
+
+config INCLUDE_ADSL_LTQ
+	bool "Build Lantiq DSL"
+	
+endchoice
+	
+config INCLUDE_ALG
+	bool "Build ALG"
+	default n
+	
+config INCLUDE_ALG_H323
+	bool "Build H323 ALG"
+	default n
+	depends on INCLUDE_ALG
+
+config INCLUDE_ALG_SIP
+	bool "Build SIP ALG"
+	default n
+	depends on INCLUDE_ALG
+	
+endmenu	
+
+menu 'WEB Options'
+
+config WEB_INCLUDE_MULTI_EWAN
+	bool "WEB multi Ethernet WAN"
+	default n
+		
+endmenu

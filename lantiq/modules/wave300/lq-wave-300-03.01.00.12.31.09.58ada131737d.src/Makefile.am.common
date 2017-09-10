@@ -1,0 +1,122 @@
+# $Id$
+
+tools_srcdir=$(top_srcdir)/tools
+abs_tools_srcdir=$(abs_top_srcdir)/tools
+
+tools_shared_srcdir=$(tools_srcdir)/shared
+abs_tools_shared_srcdir=$(abs_tools_srcdir)/shared
+
+wireless_srcdir=$(top_srcdir)/wireless
+abs_wireless_srcdir=$(abs_top_srcdir)/wireless
+
+wireless_shared_srcdir=$(wireless_srcdir)/shared
+abs_wireless_shared_srcdir=$(abs_wireless_srcdir)/shared
+
+rflib_srcdir=$(wireless_srcdir)/rflib
+abs_rflib_srcdir=$(abs_wireless_srcdir)/rflib
+
+rflib_shared_srcdir=$(rflib_srcdir)/shared
+abs_rflib_shared_srcdir=$(abs_rflib_srcdir)/shared
+
+rflib_linux_srcdir=$(rflib_srcdir)/linux
+abs_rflib_linux_srcdir=$(abs_rflib_srcdir)/linux
+
+driver_srcdir=$(wireless_srcdir)/driver
+abs_driver_srcdir=$(abs_wireless_srcdir)/driver
+
+driver_shared_srcdir=$(driver_srcdir)/shared
+abs_driver_shared_srcdir=$(abs_driver_srcdir)/shared
+
+driver_linux_srcdir=$(driver_srcdir)/linux
+abs_driver_linux_srcdir=$(abs_driver_srcdir)/linux
+
+tools_builddir=$(top_builddir)/tools
+abs_tools_builddir=$(abs_top_builddir)/tools
+
+tools_shared_builddir=$(tools_builddir)/shared
+abs_tools_shared_builddir=$(abs_tools_builddir)/shared
+
+wireless_builddir=$(top_builddir)/wireless
+abs_wireless_builddir=$(abs_top_builddir)/wireless
+
+wireless_shared_builddir=$(wireless_builddir)/shared
+abs_wireless_shared_builddir=$(abs_wireless_builddir)/shared
+
+rflib_builddir=$(wireless_builddir)/rflib
+abs_rflib_builddir=$(abs_wireless_builddir)/rflib
+
+rflib_shared_builddir=$(rflib_builddir)/shared
+abs_rflib_shared_builddir=$(abs_rflib_builddir)/shared
+
+rflib_linux_builddir=$(rflib_builddir)/linux
+abs_rflib_linux_builddir=$(abs_rflib_builddir)/linux
+
+driver_builddir=$(wireless_builddir)/driver
+abs_driver_builddir=$(abs_wireless_builddir)/driver
+
+driver_shared_builddir=$(driver_builddir)/shared
+abs_driver_shared_builddir=$(abs_driver_builddir)/shared
+
+driver_linux_builddir=$(driver_builddir)/linux
+abs_driver_linux_builddir=$(abs_driver_builddir)/linux
+
+utf_srcdir=$(wireless_srcdir)/utf
+abs_utf_srcdir=$(abs_wireless_srcdir)/utf
+
+utf_shared_srcdir=$(utf_srcdir)/utfshared
+abs_utf_shared_srcdir=$(abs_utf_srcdir)/utfshared
+
+utf_module_srcdir=$(utf_srcdir)/utfmodule
+abs_utf_module_srcdir=$(abs_utf_srcdir)/utfmodule
+
+utf_user_module_srcdir=$(utf_module_srcdir)/linuser
+abs_utf_user_module_srcdir=$(abs_utf_module_srcdir)/linuser
+
+utf_kernel_module_srcdir=$(utf_module_srcdir)/linkernel
+abs_utf_kernel_module_srcdir=$(abs_utf_module_srcdir)/linkernel
+
+utf_builddir=$(wireless_builddir)/utf
+abs_utf_builddir=$(abs_wireless_builddir)/utf
+
+utf_shared_builddir=$(utf_builddir)/utfshared
+abs_utf_shared_builddir=$(abs_utf_builddir)/utfshared
+
+utf_module_builddir=$(utf_builddir)/utfmodule
+abs_utf_module_builddir=$(abs_utf_builddir)/utfmodule
+
+utf_user_module_builddir=$(utf_module_builddir)/linuser
+abs_utf_user_module_builddir=$(abs_utf_module_builddir)/linuser
+
+utf_kernel_module_builddir=$(utf_module_builddir)/linkernel
+abs_utf_kernel_module_builddir=$(abs_utf_module_builddir)/linkernel
+
+rebase_copy_cmd := cp -R --remove-destination -p -u
+
+_REVISION_VERSION:=$(shell $(abs_top_srcdir)/support/revision_info.sh $(abs_top_srcdir) base)
+_MTLK_VERSION:=$(shell $(abs_top_srcdir)/support/mtlk_ver.pl -g < $(abs_top_srcdir)/mtlk_version)
+MTLK_COMMON_CPPFLAGS := -DMTLK_PACKAGE_VERSION="\"$(_MTLK_VERSION).$(_REVISION_VERSION)\"" \
+                        -include $(abs_top_builddir)/config.h \
+                        -Wall -Wno-multichar 
+
+include $(abs_top_builddir)/.config
+MTLK_COMMON_CPPFLAGS+=-include $(abs_top_builddir)/.config.h
+
+#Paths for application rebasing
+rebase_root=$(abs_builddir)/@rebaser_subdir@
+rebased_sources=$(rebase_root)$(subst $(abs_top_srcdir),,$(abs_srcdir))
+
+#Install tree layout
+rflibdir=${prefix}/rflib
+driverdir=${prefix}/driver
+mttoolsdir=${prefix}/mttools
+testsdir=${prefix}/tests
+rtloggerdir=${prefix}/rtlogger
+utdir=${prefix}/ut
+dutdir=${prefix}/dut
+toolsdir=${prefix}/tools
+hlprtoolsdir=${prefix}/hlprtools
+
+#Variables for mtlkfront.sh
+export mtlkfront_do_filtering=y
+export abs_builddir
+export abs_top_srcdir

@@ -1,0 +1,20 @@
+PATH_TO_TOOLCHAIN = /opt/toolchains/sigma/8634_jabil/toolchain26/toolchain/build_mipsel_nofpu/staging_dir/bin
+
+CROSS_COMPILE = ${PATH_TO_TOOLCHAIN}/mipsel-linux-
+CC = ${CROSS_COMPILE}gcc
+LD = ${CROSS_COMPILE}ld
+
+PATH := $(PATH):${PATH_TO_TOOLCHAIN}
+CFLAGS = -g -fno-common -fno-builtin -Wall  -Dlinux -D__linux__ -Dunix
+INCLUDE =
+LIBPATH = -lpthread
+LIB =
+
+include Makefile.inc
+
+# DO NOT DELETE THIS LINE -- mkdep uses it.
+# DO NOT PUT ANYTHING AFTER THIS LINE, IT WILL GO AWAY.
+
+
+
+# IF YOU PUT ANYTHING HERE IT WILL GO AWAY

@@ -1,0 +1,1 @@
+../../../../../../../target/linux/ltqcpe/files/include/asm-mips/ifx/amazon_se/model.h

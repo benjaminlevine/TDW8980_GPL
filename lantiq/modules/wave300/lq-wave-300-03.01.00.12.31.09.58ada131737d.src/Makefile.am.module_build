@@ -1,0 +1,28 @@
+# $Id$
+
+define $(module_canonical_name)_BUILD_CMD
+    @(mkdir -p $($(module_canonical_name)_src_dir) && \
+      ( test x"`ls $(abs_srcdir)/$($(module_canonical_name)_src_dir)/Makefile* 2> /dev/null | wc -l`" = x"0" \
+        || $(rebase_copy_cmd) $(abs_srcdir)/$($(module_canonical_name)_src_dir)/Makefile* $(abs_builddir)/$($(module_canonical_name)_src_dir) ) && \
+     $(rebase_copy_cmd) $(abs_srcdir)/$($(module_canonical_name)_src_dir)/Kbuild $(abs_builddir)/$($(module_canonical_name)_src_dir) && \
+     cd $($(module_canonical_name)_src_dir) && \
+     $(abs_top_srcdir)/support/mtlkfront.sh $($(module_canonical_name)_src_dir) \
+         make -f Makefile.2.6.inc abs_srcdir=$(abs_srcdir)/$($(module_canonical_name)_src_dir)/ \
+                                             top_srcdir=../$(top_srcdir)/ \
+                                             abs_top_builddir=$(abs_top_builddir)/ \
+                                             top_builddir=../$(top_builddir)/ \
+                                             abs_top_srcdir=$(abs_top_srcdir)/ \
+                                             srcdir=../$(srcdir)/$($(module_canonical_name)_src_dir)/ \
+                                             KERNELDIR=@kernel_dir@ \
+                                             @kernel_arch_var@ \
+                                             CROSS_COMPILE=@kernel_cross_compile@ \
+                                             mtlk_build_kernel_library=$(mtlk_build_kernel_library) && \
+     ( test x$(mtlk_build_kernel_library) != xy || cp lib.a $($(module_canonical_name)_binary_name) ) && \
+     ( @kernel_cross_compile@strip -dx $($(module_canonical_name)_binary_name) ) && \
+     ( $(rebase_copy_cmd) $($(module_canonical_name)_binary_name) $(abs_builddir)) || ( rm -f $(abs_builddir)/$($(module_canonical_name)_binary_name) && exit 11 ) )
+endef
+
+define $(module_canonical_name)_CLEAN_CMD
+    find $($(module_canonical_name)_src_dir) \! -name Makefile -type f -delete
+    find $($(module_canonical_name)_src_dir) -depth -type d -empty -exec rmdir {} \;
+endef

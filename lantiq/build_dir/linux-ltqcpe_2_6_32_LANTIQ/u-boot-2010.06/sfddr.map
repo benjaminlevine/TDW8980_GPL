@@ -1,0 +1,419 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+monitor_flash_len   0x4               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+___strtok           0x4               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ddrsize             0x4               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+mode                0x1               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+chipid              0x4               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+d_pattern           0x20              /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+b_pattern           0x4               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+_ctype              0x1               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+w_pattern           0x8               /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .reginfo       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                . = 0x0
+                0x0000000000000000                . = ALIGN (0x4)
+
+.text           0x00000000be220500     0x4020
+ *(.text)
+ .text          0x00000000be220500      0x4b0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+                0x00000000be220990                dcache_hit_invalidate
+                0x00000000be22090c                dcache_linesize_mips32
+                0x00000000be220970                dcache_writeback_invalidate
+                0x00000000be220500                _start
+ .text          0x00000000be2209b0      0x570 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+                0x00000000be2209b0                spi_write_byte
+                0x00000000be220b74                malloc
+                0x00000000be220bc4                calloc
+                0x00000000be220bb4                realloc
+                0x00000000be220bcc                sbrk
+                0x00000000be220c20                uncompress_image
+                0x00000000be220d28                board_init_f
+                0x00000000be220a18                sf_read
+                0x00000000be220bbc                free
+ .text          0x00000000be220f20     0x1230 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+                0x00000000be221808                print_u8
+                0x00000000be221738                print_state
+                0x00000000be2218f8                tune_ddr
+                0x00000000be220f28                init_pattern
+                0x00000000be220f20                debug_print
+                0x00000000be221888                print_u32
+                0x00000000be220fd8                sdramtest
+ .text          0x00000000be222150      0x5d0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+                0x00000000be222214                ddrram_init
+                0x00000000be222150                cgu_init
+                0x00000000be2226e8                lowlevel_init
+ .text          0x00000000be222720      0x820 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+                0x00000000be222720                strcpy
+                0x00000000be222da8                memscan
+                0x00000000be2228d8                strim
+                0x00000000be222d0c                memmove
+                0x00000000be222890                skip_spaces
+                0x00000000be222c8c                memcpy
+                0x00000000be222b98                strswab
+                0x00000000be2229dc                strnlen
+                0x00000000be222964                strrchr
+                0x00000000be222768                strcat
+                0x00000000be222e88                memchr
+                0x00000000be222dcc                strstr
+                0x00000000be222818                strncmp
+                0x00000000be222740                strncpy
+                0x00000000be222c64                bcopy
+                0x00000000be222a78                strtok
+                0x00000000be222d70                memcmp
+                0x00000000be222794                strncat
+                0x00000000be222eb4                strdup
+                0x00000000be222be8                memset
+                0x00000000be2227e8                strcmp
+                0x00000000be222b34                strsep
+                0x00000000be222a04                strspn
+                0x00000000be2228c0                strlen
+                0x00000000be22285c                strchr
+                0x00000000be222a40                strpbrk
+ .text          0x00000000be222f40      0x1d0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+                0x00000000be2230bc                crc32
+                0x00000000be2230f4                crc32_wd
+                0x00000000be222f40                crc32_no_comp
+ .text          0x00000000be223110      0x1d0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+                0x00000000be223110                get_cpu_clk
+                0x00000000be223288                get_fpi_clk
+                0x00000000be2231b0                get_ddr_clk
+ .text          0x00000000be2232e0      0x350 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+                0x00000000be2233c4                asc_inb
+                0x00000000be223430                serial_setbrg
+                0x00000000be22340c                serial_tstc
+                0x00000000be2232e0                serial_putc
+                0x00000000be223428                serial_stop
+                0x00000000be223420                serial_start
+                0x00000000be223554                serial_init
+                0x00000000be223370                serial_puts
+                0x00000000be2233e8                serial_getc
+ .text          0x00000000be223630      0x1d0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+                0x00000000be22375c                mdelay
+                0x00000000be223728                __udelay
+                0x00000000be2236fc                set_timer
+                0x00000000be223660                reset_timer
+                0x00000000be2237f8                get_tbclk
+                0x00000000be22368c                get_timer
+                0x00000000be223630                timer_init
+                0x00000000be2237bc                get_ticks
+ .text          0x00000000be223800      0xab0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+                0x00000000be223800                LzmaDecodeProperties
+                0x00000000be22389c                LzmaDecode
+ .text          0x00000000be2242b0      0x270 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+                0x00000000be2242b0                lzma_inflate
+                0x00000000be224520                . = ALIGN (0x4)
+
+.rodata         0x00000000be224520      0x480
+ *(.rodata)
+ .rodata        0x00000000be224520       0x40 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+                0x00000000be224520                version_string
+ .rodata        0x00000000be224560       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .rodata        0x00000000be224570      0x400 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .rodata        0x00000000be224970       0x30 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+
+.reginfo        0x00000000be2249a0       0x18
+ .reginfo       0x00000000be2249a0       0x18 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+
+.rodata.str1.4  0x00000000be2249b8      0x224
+ .rodata.str1.4
+                0x00000000be2249b8      0x224 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+
+.rel.dyn        0x00000000be224bdc        0x0
+ .rel.dyn       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+                0x00000000be224bdc                . = ALIGN (0x4)
+
+.data           0x00000000be224be0        0x0 load address 0x00000000be224bdc
+ *(.data)
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .data          0x00000000be224be0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.got.plt        0x00000000be224bdc        0x0
+ .got.plt       0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+                0x00000000be224bdc                . = ALIGN (0x4)
+
+.sdata
+ *(.sdata)
+ *(.sdata)
+                0x00000000be224be0                _gp = ALIGN (0x10)
+                0x00000000be224be0                . = ALIGN (0x10)
+                0x00000000be224be0                __got_start = .
+
+.got            0x00000000be224be0       0xd0
+ *(.got)
+ .got           0x00000000be224be0       0xd0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+                0x00000000be224be0                _GLOBAL_OFFSET_TABLE_
+                0x00000000be224cb0                __got_end = .
+                0x00000000be224cb0                . = .
+                0x00000000be224cb0                __u_boot_cmd_start = .
+
+.u_boot_cmd
+ *(.u_boot_cmd)
+                0x00000000be224cb0                __u_boot_cmd_end = .
+                0x00000000be224cb0                . = ALIGN (0x4)
+                0x00000000be224cb0                uboot_end_data = .
+                0x00000000000000d0                got_size = (__got_end - __got_start)
+                0x0000000000000034                num_got_entries = ((__got_end - __got_start) >> 0x2)
+                0x00000000be224cb0                . = ALIGN (0x4)
+
+.sbss
+ *(.sbss)
+
+.bss            0x00000000be224cb0       0x81
+ *(.bss)
+ .bss           0x00000000be224cb0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .bss           0x00000000be224cb0       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .bss           0x00000000be224cc0       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+                0x00000000be224cc0                cur_state
+ .bss           0x00000000be224cd0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .bss           0x00000000be224cd0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .bss           0x00000000be224cd0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .bss           0x00000000be224cd0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .bss           0x00000000be224cd0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .bss           0x00000000be224cd0       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .bss           0x00000000be224ce0        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .bss           0x00000000be224ce0       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+ COMMON         0x00000000be224cf0        0x4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+                0x00000000be224cf0                monitor_flash_len
+ COMMON         0x00000000be224cf4       0x38 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+                0x00000000be224cf4                ddrsize
+                0x00000000be224cf8                mode
+                0x00000000be224cfc                chipid
+                0x00000000be224d00                d_pattern
+                0x00000000be224d20                b_pattern
+                0x00000000be224d24                w_pattern
+ COMMON         0x00000000be224d2c        0x5 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+                0x00000000be224d2c                ___strtok
+                0x00000000be224d30                _ctype
+                0x00000000be224d31                uboot_end = .
+Address of section .text set to 0xbe220500
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+LOAD /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+OUTPUT(sfddr elf32-tradbigmips)
+
+.pdr            0x0000000000000000      0x940
+ .pdr           0x0000000000000000       0x60 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .pdr           0x0000000000000060      0x120 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .pdr           0x0000000000000180       0xe0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .pdr           0x0000000000000260       0x60 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .pdr           0x00000000000002c0      0x340 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .pdr           0x0000000000000600       0x60 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .pdr           0x0000000000000660       0x60 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .pdr           0x00000000000006c0      0x120 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .pdr           0x00000000000007e0      0x100 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .pdr           0x00000000000008e0       0x40 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .pdr           0x0000000000000920       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_line     0x0000000000000000     0x14aa
+ .debug_line    0x0000000000000000      0x12c /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .debug_line    0x000000000000012c      0x2d1 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_line    0x00000000000003fd      0x3cd /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_line    0x00000000000007ca      0x14c /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .debug_line    0x0000000000000916      0x261 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_line    0x0000000000000b77      0x286 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_line    0x0000000000000dfd       0xe6 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_line    0x0000000000000ee3      0x142 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_line    0x0000000000001025       0xe7 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_line    0x000000000000110c      0x1cf /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_line    0x00000000000012db      0x1cf /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_info     0x0000000000000000     0x2cb3
+ .debug_info    0x0000000000000000       0xa4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .debug_info    0x00000000000000a4      0x96f /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_info    0x0000000000000a13      0x43a /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_info    0x0000000000000e4d       0xa6 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .debug_info    0x0000000000000ef3      0x99e /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_info    0x0000000000001891      0x2aa /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_info    0x0000000000001b3b      0x10a /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_info    0x0000000000001c45      0x576 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_info    0x00000000000021bb      0x2a0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_info    0x000000000000245b      0x4ee /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_info    0x0000000000002949      0x36a /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_abbrev   0x0000000000000000      0xe35
+ .debug_abbrev  0x0000000000000000       0x14 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .debug_abbrev  0x0000000000000014      0x2b5 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_abbrev  0x00000000000002c9      0x1a1 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_abbrev  0x000000000000046a       0x14 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .debug_abbrev  0x000000000000047e      0x1d5 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_abbrev  0x0000000000000653      0x15a /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_abbrev  0x00000000000007ad       0xae /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_abbrev  0x000000000000085b      0x18c /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_abbrev  0x00000000000009e7      0x15b /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_abbrev  0x0000000000000b42      0x155 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_abbrev  0x0000000000000c97      0x19e /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_aranges  0x0000000000000000      0x160
+ .debug_aranges
+                0x0000000000000000       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/start_sfddr.o
+ .debug_aranges
+                0x0000000000000020       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_aranges
+                0x0000000000000040       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_aranges
+                0x0000000000000060       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/lowlevel_init.o
+ .debug_aranges
+                0x0000000000000080       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_aranges
+                0x00000000000000a0       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_aranges
+                0x00000000000000c0       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_aranges
+                0x00000000000000e0       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_aranges
+                0x0000000000000100       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_aranges
+                0x0000000000000120       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_aranges
+                0x0000000000000140       0x20 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.mdebug.abi32   0x0000000000000000        0x0
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .mdebug.abi32  0x0000000000000000        0x0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_frame    0x0000000000000000      0x5ec
+ .debug_frame   0x0000000000000000       0xc4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_frame   0x00000000000000c4       0xb4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_frame   0x0000000000000178      0x1f8 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_frame   0x0000000000000370       0x48 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_frame   0x00000000000003b8       0x50 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_frame   0x0000000000000408       0xc0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_frame   0x00000000000004c8       0xa4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_frame   0x000000000000056c       0x48 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_frame   0x00000000000005b4       0x38 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_loc      0x0000000000000000     0x1d56
+ .debug_loc     0x0000000000000000      0x161 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_loc     0x0000000000000161      0x5df /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_loc     0x0000000000000740      0x645 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_loc     0x0000000000000d85      0x1c6 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_loc     0x0000000000000f4b       0xbc /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_loc     0x0000000000001007      0x1d5 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_loc     0x00000000000011dc       0xf4 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_loc     0x00000000000012d0      0x881 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_loc     0x0000000000001b51      0x205 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_pubnames
+                0x0000000000000000      0x4e8
+ .debug_pubnames
+                0x0000000000000000       0xbb /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_pubnames
+                0x00000000000000bb       0xd1 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .debug_pubnames
+                0x000000000000018c      0x155 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .debug_pubnames
+                0x00000000000002e1       0x3b /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .debug_pubnames
+                0x000000000000031c       0x42 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .debug_pubnames
+                0x000000000000035e       0xa1 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_pubnames
+                0x00000000000003ff       0x81 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .debug_pubnames
+                0x0000000000000480       0x3a /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_pubnames
+                0x00000000000004ba       0x2e /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_ranges   0x0000000000000000      0x228
+ .debug_ranges  0x0000000000000000       0x30 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .debug_ranges  0x0000000000000030       0x60 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .debug_ranges  0x0000000000000090      0x110 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .debug_ranges  0x00000000000001a0       0x88 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.debug_str      0x0000000000000000      0xe24
+ .debug_str     0x0000000000000000      0x448 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+                                        0x4b8 (size before relaxing)
+ .debug_str     0x0000000000000448      0x11d /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+                                        0x23c (size before relaxing)
+ .debug_str     0x0000000000000565      0x161 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+                                        0x221 (size before relaxing)
+ .debug_str     0x00000000000006c6       0x55 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+                                        0x18d (size before relaxing)
+ .debug_str     0x000000000000071b       0xa7 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+                                        0x157 (size before relaxing)
+ .debug_str     0x00000000000007c2      0x2b9 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+                                        0x32b (size before relaxing)
+ .debug_str     0x0000000000000a7b       0xe0 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+                                        0x194 (size before relaxing)
+ .debug_str     0x0000000000000b5b      0x1fe /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+                                        0x285 (size before relaxing)
+ .debug_str     0x0000000000000d59       0xcb /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+                                        0x289 (size before relaxing)
+
+.comment        0x0000000000000000       0xa2
+ .comment       0x0000000000000000       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .comment       0x0000000000000012       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .comment       0x0000000000000024       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .comment       0x0000000000000036       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .comment       0x0000000000000048       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .comment       0x000000000000005a       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .comment       0x000000000000006c       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .comment       0x000000000000007e       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .comment       0x0000000000000090       0x12 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/sfddr_board.o
+ .gnu.attributes
+                0x0000000000000010       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/board/vr9/tune_ddr.o
+ .gnu.attributes
+                0x0000000000000020       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/string.o
+ .gnu.attributes
+                0x0000000000000030       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib/crc32.o
+ .gnu.attributes
+                0x0000000000000040       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/cpu/vr9/clock.o
+ .gnu.attributes
+                0x0000000000000050       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/drivers/serial/lq_asc.o
+ .gnu.attributes
+                0x0000000000000060       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/arch/mips/lib/time.o
+ .gnu.attributes
+                0x0000000000000070       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaDecode.o
+ .gnu.attributes
+                0x0000000000000080       0x10 /home/yangxu/tplink/lantiq_lettuce/tpbsp/lantiq/build_dir/linux-ltqcpe_2_6_32_LANTIQ/u-boot-2010.06/lib_bootstrap/LzmaWrapper.o

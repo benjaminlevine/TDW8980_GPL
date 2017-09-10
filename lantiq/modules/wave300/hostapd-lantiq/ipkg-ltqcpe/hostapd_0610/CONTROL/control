@@ -1,0 +1,11 @@
+Package: hostapd_0610
+Version: d23bf71-1
+Depends: 
+Provides: 
+Source: package/feeds/feed_opensource_apps/hostapd_0610
+Section: net
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ltqcpe
+Installed-Size: 503361
+Description:  IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/EAP/RADIUS Authenticator

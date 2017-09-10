@@ -1,0 +1,5 @@
+libntfs_3g_la-compat.lo: compat.c ../config.h ../include/ntfs-3g/compat.h
+
+../config.h:
+
+../include/ntfs-3g/compat.h:

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/symbian
+END
+wpa_supplicant.mmp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/symbian/wpa_supplicant.mmp
+END
+bld.inf
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/symbian/bld.inf
+END
+README.symbian
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/symbian/README.symbian
+END

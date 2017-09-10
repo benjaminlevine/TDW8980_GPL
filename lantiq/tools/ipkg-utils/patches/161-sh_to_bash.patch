@@ -1,0 +1,16 @@
+--- ipkg-utils-1.7/ipkg-build	2010-08-10 15:10:21.493973000 +0530
++++ ipkg-utils-1.7.patched/ipkg-build	2010-08-25 16:11:27.759174000 +0530
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ 
+ # ipkg-build -- construct a .ipk from a directory
+ # Carl Worth <cworth@east.isi.edu>
+--- ipkg-utils-1.7/ipkg-buildpackage	2010-08-10 15:10:21.408027000 +0530
++++ ipkg-utils-1.7.patched/ipkg-buildpackage	2010-08-25 16:11:51.353011000 +0530
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ #
+ # $Id: ipkg-buildpackage,v 1.1 2001/07/26 15:36:36 oku Exp $
+ #

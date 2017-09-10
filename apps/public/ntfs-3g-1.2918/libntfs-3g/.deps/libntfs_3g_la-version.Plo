@@ -1,0 +1,6 @@
+libntfs_3g_la-version.lo: version.c ../config.h \
+  ../include/ntfs-3g/version.h
+
+../config.h:
+
+../include/ntfs-3g/version.h:

@@ -1,0 +1,64 @@
+config TARGET_ROOTFS_GLUBI_SUPPORT
+	bool "Images on UBI (glubi support)"
+	depends !TARGET_ROOTFS_INITRAMFS && UBOOT_CONFIG_BOOT_FROM_NAND && (TARGET_ROOTFS_SQUASHFS || TARGET_ROOTFS_JFFS2)
+	select PACKAGE_kmod-ubi_mtd
+	help
+	   This creates an ubi based rootfs for NAND flash.
+	   Supports ubi+(squashfs+jffs2/ubifs) overlay or ubi+jffs
+	   On squashfs selection, the free space on rootfs partition will be marked as Data volume(data_vol).
+	   Data volume will be mounted under /mnt/data. This can be overlayed on squashfs.
+
+  choice
+	prompt "Select a filesystem for Data Volume"
+	depends TARGET_ROOTFS_GLUBI_SUPPORT && TARGET_ROOTFS_SQUASHFS
+	help
+	  Choose a filesystem to enable and mount the data volume on target
+
+	config TARGET_DATAFS_JFFS2
+	  bool "jffs2"
+	  select PACKAGE_kmod-jffs2
+	  help
+	    Enable and mount JFFS2 on data volume on target
+
+	config TARGET_DATAFS_UBIFS
+	  bool "ubifs"
+	  select PACKAGE_kmod-ubifs
+	  help
+	    Enable and mount UBIFS on data volume on target
+
+	config TARGET_DATAFS_NONE
+	  bool "None"
+	  help
+	    No data volume needed
+
+  endchoice
+
+config TARGET_ROOTFS_DATAFS_OVERLAY
+	bool "Data Volume Overlay"
+	depends TARGET_ROOTFS_GLUBI_SUPPORT && (TARGET_DATAFS_JFFS2 || TARGET_DATAFS_UBIFS)
+	select BUSYBOX_CONFIG_PIVOT_ROOT
+	help
+	  Create an overlay fs (using mini_fo) with data volume. To activate overlay, add 'do_overlay' flag
+	  in the kernel command line. Refer /etc/preinit for more details.
+
+config TARGET_ROOTFS_IMAGE_PHYSICAL_ERASE_SIZE
+	string
+	prompt "Physical nand erase size in kilobytes to create NAND images"
+	depends !TARGET_ROOTFS_INITRAMFS && UBOOT_CONFIG_BOOT_FROM_NAND
+	help
+	  Physical nand erase size to create nand based images. Refer NAND Chip spec to get this value.
+
+config TARGET_ROOTFS_UBI_MIN_IO_SIZE
+	string
+	prompt "Minimum IO unit size of the flash in bytes (for UBI image)"
+	depends TARGET_ROOTFS_GLUBI_SUPPORT
+	help
+	  Minimum IO unit size of the flash in bytes (for UBI). Refer NAND Chip spec to get this value.
+
+config TARGET_ROOTFS_UBI_DATA_OFFSET
+	string
+	prompt "Data Offset for the NAND chip in bytes (Optional for UBI image)"
+	depends TARGET_ROOTFS_GLUBI_SUPPORT
+	help
+	  Specifiy data offset to create ubi image. This is an optional configuration. Leave it blank if not sure.
+

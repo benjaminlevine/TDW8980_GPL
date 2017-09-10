@@ -1,0 +1,1 @@
+../../../../../../../target/linux/ltqcpe/files/include/asm-mips/ifx/ar10/ar10_ref_board.h

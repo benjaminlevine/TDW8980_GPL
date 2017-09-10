@@ -1,0 +1,134 @@
+# Set the toolchain path
+export BUSYBOX=none
+export WIRELESSTOOLS=wireless_tools.28
+export WIRELESSTOOLSLIB=libiw.so.28
+export BUS=PCI
+export TARGETARCH=mipsisa32-be-elf
+export AP_TYPE=dual
+
+# To enable use of apps/wpa2 instead of older apps/wpa:
+export BUILD_WPA2=y
+export BUILD_WPA2_ATHR=y
+#for station forwarding support
+export CONFIG_ETHERSTA=y
+
+#
+# UMAC build option
+#
+export BUILD_UMAC=1
+
+#
+# Firmware upgrade file definitions
+#
+export FWUPGRADE_BUILD_DIR=$(TOPDIR)/fwupgrade-$(BOARD_TYPE)
+
+#
+# Environmental variables used to configure the HAL/ATH layers at compile time
+#
+
+export ATH_CAP_PHYERR_DIAG=1
+export AR5416_G_MODE=1
+export AH_SUPPORT_HOWL=0
+export AH_SUPPORT_OWL=1
+export AH_DEBUG=1
+export REMOVE_PKT_LOG=0
+export AR5416_INT_MITIGATION=1
+export ATH_SUPPORT_DFS=1
+export ATH_SUPPORT_IQUE=1
+
+export ATH_SUPPORT_UAPSD=1
+
+#
+# Select the support required for this board
+#
+export AH_SUPPORT_AR5210=0
+export AH_SUPPORT_AR5211=0
+export AH_SUPPORT_AR5212=1
+export AH_SUPPORT_AR5416=1
+export AH_SUPPORT_5111=1
+export AH_SUPPORT_5112=1
+export AH_SUPPORT_2413=1
+export AH_SUPPORT_5413=1
+export AH_SUPPORT_2316=1
+export AH_SUPPORT_2317=1
+export AH_SUPPORT_2425=1
+export AH_SUPPORT_2133=1  
+
+export AH_SUPPORT_AR9300=0
+#export AR9300_EMULATION=1
+#export AR9300_EMULATION_BB=1
+
+export ATH_RB=0
+
+export ATH_SUPPORT_EDMA=0
+export ATH_SUPPORT_POWER=0
+
+export DBG=0
+
+ifeq ($(BUILD_WPA2),y)
+export ATH_WPS_IE=1
+export MADWIFIPATH=$(TOPDIR)/wlan/linux
+export MADWIFIINC=$(TOPDIR)/wlan
+else
+export ATH_WPS_IE=0
+endif
+
+export DUAL_FIRMWAREIMAGE_SUPPORT=0
+
+#
+# Spectral scan enable
+#
+export ATH_SUPPORT_SPECTRAL=0
+export ATH_SUPPORT_VOWEXT=1
+
+#
+# Middleware enable
+#
+
+export BUILD_MIDDLEWARE=n
+ifeq ($(BUILD_MIDDLEWARE),y)
+export ATH_SUPPORT_WAPI=1
+endif
+
+export ATH_RXBUF=192
+export KERNELVER=2.6.32.32
+
+export AH_SUPPORT_AR9300=1
+export ATH_SUPPORT_EDMA=1
+
+export ATH_SUPPORT_POWER=1
+export AH_DEBUG=0
+export AH_REGREAD_DEBUG=0
+export AR5416_INT_MITIGATION=0
+export ATH_SUPPORT_TxBF=1
+
+export ATH_SUPPORT_DESCFAST=0
+export ATH_EXT_AP=1
+
+export ATH_SUPPORT_LED=1
+export ATH_LED_CUSTOMER=3
+export GPIO_PIN_FUNC_0=0
+export GPIO_PIN_FUNC_1=1
+export GPIO_PIN_FUNC_2=7
+
+export AH_CAL_IN_FLASH=1
+export AH_CAL_LOCATIONS=0xbfff0000
+export AH_CAL_RADIOS=1
+
+export UMAC_SUPPORT_NAWDS=0
+export UMAC_SUPPORT_STA_POWERSAVE=0
+export UMAC_SUPPORT_TX_FRAG=0
+export UMAC_SUPPORT_RX_FRAG=0
+
+export ATH_SUPPORT_GREEN_AP=0
+#export ATHEROS_LINUX_PERIODIC_SCAN=0
+export UMAC_SUPPORT_SCAN=0
+export UMAC_SUPPORT_APLIST=0
+export UMAC_SUPPORT_APONLY=1
+
+export ATH_SUPPORT_WIRESHARK=0
+export ATH_SUPPORT_FORCE_PPM=0
+
+export NO_SIMPLE_CONFIG=0
+export INSTALL_BLACKLIST="etc/host.conf /etc/nsswitch.conf /etc/resolv.conf /etc/shadow /etc/fstab \
+/etc/inittab /etc/passwd /etc/securetty /etc/udhcpc.script /etc/group /etc/issue /etc/rc.d/rcS /etc/services /etc/udhcpd.conf"

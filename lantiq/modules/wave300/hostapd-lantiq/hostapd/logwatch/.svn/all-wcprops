@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/hostapd/logwatch
+END
+hostapd
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/hostapd/logwatch/hostapd
+END
+hostapd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/hostapd/logwatch/hostapd.conf
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/hostapd/logwatch/README
+END

@@ -1,0 +1,6 @@
+# $Id: mtlk_version 6079 2009-02-12 16:22:05Z dmytrof $
+# Code version file for Metalink driver release system
+# Major number is marked by the round brackets
+# Minor number is marked by the square brackets
+
+MTLK_VER=3.1.0.12.(31).[9]

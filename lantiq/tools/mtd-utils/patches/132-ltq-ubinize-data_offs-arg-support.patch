@@ -1,0 +1,106 @@
+Index: mtd-20090505/ubi-utils/src/libubigen.c
+===================================================================
+--- mtd-20090505.orig/ubi-utils/src/libubigen.c	2011-08-19 07:48:32.734331186 +0530
++++ mtd-20090505/ubi-utils/src/libubigen.c	2011-08-19 07:48:56.875521926 +0530
+@@ -71,6 +71,38 @@
+ 	ui->vtbl_size = ui->max_volumes * UBI_VTBL_RECORD_SIZE;
+ }
+ 
++void ubigen_info_init_d(struct ubigen_info *ui, int peb_size, int min_io_size,
++		      int subpage_size, int vid_hdr_offs, int data_offs, int ubi_ver)
++{
++	if (!vid_hdr_offs) {
++		vid_hdr_offs = UBI_EC_HDR_SIZE + subpage_size - 1;
++		vid_hdr_offs /= subpage_size;
++		vid_hdr_offs *= subpage_size;
++	}
++
++	ui->peb_size = peb_size;
++	ui->min_io_size = min_io_size;
++	ui->vid_hdr_offs = vid_hdr_offs;
++
++	if (!data_offs) {
++		ui->data_offs = vid_hdr_offs + UBI_VID_HDR_SIZE + min_io_size - 1;
++		ui->data_offs /= min_io_size;
++		ui->data_offs *= min_io_size;
++	} else {
++		ui->data_offs = data_offs;
++	}
++
++	ui->leb_size = peb_size - ui->data_offs;
++	ui->ubi_ver = ubi_ver;
++
++	ui->max_volumes = ui->leb_size / UBI_VTBL_RECORD_SIZE;
++	if (ui->max_volumes > UBI_MAX_VOLUMES)
++		ui->max_volumes = UBI_MAX_VOLUMES;
++	ui->vtbl_size = ui->max_volumes * UBI_VTBL_RECORD_SIZE;
++}
++
++
++
+ /**
+  * ubigen_create_empty_vtbl - creates empty volume table.
+  *
+Index: mtd-20090505/ubi-utils/src/ubinize.c
+===================================================================
+--- mtd-20090505.orig/ubi-utils/src/ubinize.c	2011-08-19 07:46:53.234331332 +0530
++++ mtd-20090505/ubi-utils/src/ubinize.c	2011-08-19 07:47:34.310772211 +0530
+@@ -66,6 +66,7 @@
+ "                             physical eraseblock (default is the next\n"
+ "                             minimum I/O unit or sub-page after the EC\n"
+ "                             header)\n"
++"-d, --data_offs=<num>        specify data offset if needs to be changed\n"
+ "-e, --erase-counter=<num>    the erase counter value to put to EC headers\n"
+ "                             (default is 0)\n"
+ "-x, --ubi-ver=<num>          UBI version number to put to EC headers\n"
+@@ -119,6 +120,7 @@
+ 	{ .name = "min-io-size",    .has_arg = 1, .flag = NULL, .val = 'm' },
+ 	{ .name = "sub-page-size",  .has_arg = 1, .flag = NULL, .val = 's' },
+ 	{ .name = "vid-hdr-offset", .has_arg = 1, .flag = NULL, .val = 'O' },
++	{ .name = "data_offs",      .has_arg = 1, .flag = NULL, .val = 'd' },
+ 	{ .name = "erase-counter",  .has_arg = 1, .flag = NULL, .val = 'e' },
+ 	{ .name = "ubi-ver",        .has_arg = 1, .flag = NULL, .val = 'x' },
+ 	{ .name = "verbose",        .has_arg = 0, .flag = NULL, .val = 'v' },
+@@ -134,6 +136,7 @@
+ 	int peb_size;
+ 	int min_io_size;
+ 	int subpage_size;
++	int data_offs;
+ 	int vid_hdr_offs;
+ 	int ec;
+ 	int ubi_ver;
+@@ -154,7 +157,7 @@
+ 		int key;
+ 		char *endp;
+ 
+-		key = getopt_long(argc, argv, "o:p:m:s:O:e:x:vhV", long_options, NULL);
++		key = getopt_long(argc, argv, "o:p:m:s:O:d:e:x:vhV", long_options, NULL);
+ 		if (key == -1)
+ 			break;
+ 
+@@ -189,6 +192,14 @@
+ 				return errmsg("sub-page size should be power of 2");
+ 			break;
+ 
++		case 'd':
++			args.data_offs = ubiutils_get_bytes(optarg);
++			if (args.data_offs <= 0)
++				return errmsg("bad data offset size: \"%s\"", optarg);
++			if (!is_power_of_2(args.data_offs))
++				return errmsg("data offset size should be power of 2");
++			break;
++
+ 		case 'O':
+ 			args.vid_hdr_offs = strtoul(optarg, &endp, 0);
+ 			if (*endp != '\0' || endp == optarg || args.vid_hdr_offs < 0)
+@@ -447,8 +458,8 @@
+ 	if (err)
+ 		return -1;
+ 
+-	ubigen_info_init(&ui, args.peb_size, args.min_io_size,
+-			 args.subpage_size, args.vid_hdr_offs,
++	ubigen_info_init_d(&ui, args.peb_size, args.min_io_size,
++			 args.subpage_size, args.vid_hdr_offs, args.data_offs,
+ 			 args.ubi_ver);
+ 
+ 	verbose(args.verbose, "LEB size:      %d", ui.leb_size);

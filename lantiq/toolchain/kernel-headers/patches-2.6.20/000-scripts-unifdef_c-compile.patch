@@ -1,0 +1,30 @@
+diff -Naur linux-2.6.20.19/scripts/unifdef.c linux-2.6.20.19.lq_patched/scripts/unifdef.c
+--- linux-2.6.20.19/scripts/unifdef.c	2007-09-09 01:02:44.000000000 +0530
++++ linux-2.6.20.19.lq_patched/scripts/unifdef.c	2010-05-03 23:47:15.404641513 +0530
+@@ -206,7 +206,7 @@
+ static void             error(const char *);
+ static int              findsym(const char *);
+ static void             flushline(bool);
+-static Linetype         getline(void);
++static Linetype         getline1(void);
+ static Linetype         ifeval(const char **);
+ static void             ignoreoff(void);
+ static void             ignoreon(void);
+@@ -512,7 +512,7 @@
+ 
+ 	for (;;) {
+ 		linenum++;
+-		lineval = getline();
++		lineval = getline1();
+ 		trans_table[ifstate[depth]][lineval]();
+ 		debug("process %s -> %s depth %d",
+ 		    linetype_name[lineval],
+@@ -526,7 +526,7 @@
+  * help from skipcomment().
+  */
+ static Linetype
+-getline(void)
++getline1(void)
+ {
+ 	const char *cp;
+ 	int cursym;

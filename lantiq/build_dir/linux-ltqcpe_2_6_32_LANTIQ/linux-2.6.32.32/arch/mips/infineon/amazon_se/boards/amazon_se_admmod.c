@@ -1,0 +1,1 @@
+../../../../../../../../target/linux/ltqcpe/files/arch/mips/infineon/amazon_se/boards/amazon_se_admmod.c

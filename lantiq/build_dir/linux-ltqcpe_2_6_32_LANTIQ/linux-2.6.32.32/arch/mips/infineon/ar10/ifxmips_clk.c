@@ -1,0 +1,1 @@
+../../../../../../../target/linux/ltqcpe/files/arch/mips/infineon/ar10/ifxmips_clk.c

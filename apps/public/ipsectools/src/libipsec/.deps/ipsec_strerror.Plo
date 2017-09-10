@@ -1,0 +1,149 @@
+ipsec_strerror.lo: ipsec_strerror.c \
+  ../.././src/include-glibc/glibc-bugs.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/features.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_config.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_arch_features.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/sys/cdefs.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/sys/types.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/types.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/wordsize.h \
+  /opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include/stddef.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/kernel_types.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/typesizes.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/pthreadtypes.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/sched.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/time.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/endian.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/endian.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/sys/select.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/select.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/sigset.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/time.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/sys/sysmacros.h \
+  ../../src/include-glibc/glibc-bugs.h ../../config.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/sys/param.h \
+  /opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include-fixed/limits.h \
+  /opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include-fixed/syslimits.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/limits.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/posix1_lim.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/local_lim.h \
+  ../../src/include-glibc/linux/limits.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_local_lim.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/posix2_lim.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/xopen_lim.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/stdio_lim.h \
+  ../../src/include-glibc/linux/param.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/asm/param.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/string.h \
+  ../../src/include-glibc/netinet/ipsec.h \
+  ../../src/include-glibc/net/pfkeyv2.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/stdint.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/bits/wchar.h \
+  ../../src/include-glibc/linux/pfkeyv2.h \
+  ../../src/include-glibc/linux/types.h \
+  ../../src/include-glibc/linux/posix_types.h \
+  ../../src/include-glibc/linux/stddef.h \
+  ../../src/include-glibc/linux/compiler.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/asm/posix_types.h \
+  /opt/trendchip/mips-linux-uclibc/usr/include/asm/types.h \
+  ../../src/include-glibc/linux/ipsec.h ipsec_strerror.h
+
+../.././src/include-glibc/glibc-bugs.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/features.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_config.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_arch_features.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/sys/cdefs.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/sys/types.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/types.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/wordsize.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include/stddef.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/kernel_types.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/typesizes.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/pthreadtypes.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/sched.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/time.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/endian.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/endian.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/sys/select.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/select.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/sigset.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/time.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/sys/sysmacros.h:
+
+../../src/include-glibc/glibc-bugs.h:
+
+../../config.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/sys/param.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include-fixed/limits.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/bin/../lib/gcc/mips-linux-uclibc/4.3.4/include-fixed/syslimits.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/limits.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/posix1_lim.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/local_lim.h:
+
+../../src/include-glibc/linux/limits.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/uClibc_local_lim.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/posix2_lim.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/xopen_lim.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/stdio_lim.h:
+
+../../src/include-glibc/linux/param.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/asm/param.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/string.h:
+
+../../src/include-glibc/netinet/ipsec.h:
+
+../../src/include-glibc/net/pfkeyv2.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/stdint.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/bits/wchar.h:
+
+../../src/include-glibc/linux/pfkeyv2.h:
+
+../../src/include-glibc/linux/types.h:
+
+../../src/include-glibc/linux/posix_types.h:
+
+../../src/include-glibc/linux/stddef.h:
+
+../../src/include-glibc/linux/compiler.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/asm/posix_types.h:
+
+/opt/trendchip/mips-linux-uclibc/usr/include/asm/types.h:
+
+../../src/include-glibc/linux/ipsec.h:
+
+ipsec_strerror.h:

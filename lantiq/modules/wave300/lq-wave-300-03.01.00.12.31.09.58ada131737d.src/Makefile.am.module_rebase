@@ -1,0 +1,71 @@
+# $Id$
+
+.PRECIOUS: $(CUR_DIR)%.c
+.PHONY: rebase always
+
+# Rule for generated sources
+$(CUR_DIR)%.c:: $(abs_top_builddir)%.c
+	@mkdir -p $(dir $@)
+	@$(rebase_copy_cmd) $< $@
+
+# Rule for repository sources
+$(CUR_DIR)%.c:: $(abs_top_srcdir)%.c rebase
+	@echo -n
+
+# Copy rflib to driver build tree
+$(CUR_DIR)%.a:: $(abs_top_builddir)%.a
+	@mkdir -p $(dir $@)
+	@$(rebase_copy_cmd) $< $@
+
+ifeq ($(mtlk_build_kernel_library),y)
+ orig_list_var := lib-y
+else
+ orig_list_var := $(MODULE_NAME)-objs
+endif
+
+orig_list := $($(orig_list_var))
+
+rebased_list := $(abspath $(addprefix $(abs_srcdir)/, $(orig_list)))
+rebased_list := $(subst $(abspath $(abs_top_srcdir))/,, $(rebased_list) )
+
+$(orig_list_var) = $(rebased_list)
+
+list_for_mkdep:=$(abspath $(addprefix $(abs_top_srcdir)/,$(filter-out %drv_info.c %.a, $($(orig_list_var):.o=.c))))
+
+inc_dirs_var_name:=$(MODULE_NAME)-includes
+
+ifndef $(inc_dirs_var_name)
+$(error Mandatory $(inc_dirs_var_name) not defined)
+endif
+
+EXTRA_INCLUDES:=$(abspath $(addprefix $(abs_srcdir)/,$($(inc_dirs_var_name))))
+EXTRA_INCLUDES:=$(subst $(abspath $(abs_top_srcdir)),$(CUR_DIR), $(EXTRA_INCLUDES) )
+EXTRA_CFLAGS += $(addprefix -I,$(EXTRA_INCLUDES))
+
+# NOTE: mkdep flags construction is a bit tricky:
+#   1. Original (CUR_DIR) include paths to redefine ones from BLD_ROOT
+#      It is intended to ensure original (non-logprep'ed) files will be 
+#      used for dependency generation - since the logprep'ed files that
+#      are used for real compilation do not exist yet.
+#   2. kbuild modules flags with -Wp... cut out
+#      The idea is to use the same flags here as kbuild uses for real
+#      modules compilation. Unfortunately, it seems that the only variable
+#      contains all these flags together is kbuild's c_flag, which is
+#      undocumented. 
+#      Moreover, it contains "-Wp,-MD,$(depfile)" parameter that harms the
+#      mkdep (it requires GCC to put the depencecies to .rebase.d file inside 
+#      the kernel's dir). Thus, we have to cut it out from c_flags for mkdep
+#      invocation.
+#   3  source file list with absolute paths
+MKDEP_CUT=-Wp,-MD
+rebase:
+	@echo Preprocessing sources...
+	@touch $(CUR_DIR)/.depend
+	@touch -a $(abs_srcdir)/logmacros.h
+	@touch -a $(abs_srcdir)/logmacros.c
+	@$(abs_driver_linux_srcdir)/mkdep -c "$(CC)" -f $(CUR_DIR)/.depend                            \
+                             $(addprefix -I,$(abspath $(addprefix $(abs_srcdir)/,$($(inc_dirs_var_name)))))   \
+                             $(filter-out $(MKDEP_CUT)%,$(c_flags))                               \
+                             $(list_for_mkdep)
+	@$(abs_top_srcdir)/support/mkhlpr.sh $(CUR_DIR)/.depend $(abs_top_srcdir) $(abs_top_builddir) $(CUR_DIR) $(MODULE_NAME)
+	@echo "  Done."

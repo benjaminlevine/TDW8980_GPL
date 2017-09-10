@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui
+END
+eventhistory.ui
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/eventhistory.ui
+END
+networkconfig.ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/networkconfig.ui.h
+END
+scanresults.ui
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/scanresults.ui
+END
+userdatarequest.ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/userdatarequest.ui.h
+END
+wpamsg.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/wpamsg.h
+END
+setup-mingw-cross-compiling
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/setup-mingw-cross-compiling
+END
+wpa_gui.pro
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/wpa_gui.pro
+END
+networkconfig.ui
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/networkconfig.ui
+END
+userdatarequest.ui
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/userdatarequest.ui
+END
+wpagui.ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/wpagui.ui.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/main.cpp
+END
+eventhistory.ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/eventhistory.ui.h
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/.gitignore
+END
+wpagui.ui
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/wpagui.ui
+END
+scanresults.ui.h
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/BA/ubos/!svn/ver/2613/branches/linux_DBN600/lantiq/modules/wave300/hostapd-lantiq/wpa_supplicant/wpa_gui/scanresults.ui.h
+END

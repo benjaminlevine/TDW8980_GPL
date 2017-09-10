@@ -1,0 +1,7 @@
+CMD_LINE(m)=ro root=/dev/mapper/VolGroup-lv_root rd_LVM_LV=VolGroup/lv_root rd_LVM_LV=VolGroup/lv_swap rd_NO_LUKS rd_NO_MD rd_NO_DM LANG=en_US.UTF-8 SYSFONT=latarcyrheb-sun16 KEYTABLE=us rhgb quiet
+CFLAGS=-Wno-multichar -Werror
+KERNELDIR=/workspace/GPL_8980/GPL_TD-W8970/lantiq/modules/wave300/lq-wave-300-03.01.00.12.31.09.58ada131737d.src/builds/ugw5.1-vrx288-nand/../../../../../build_dir/linux-ltqcpe_2_6_32_LANTIQ/linux-2.6.32.32/
+HOSTNAME=localhost.localdomain
+CROSS_COMPILE=/workspace/GPL_8980/GPL_TD-W8970/lantiq/modules/wave300/lq-wave-300-03.01.00.12.31.09.58ada131737d.src/builds/ugw5.1-vrx288-nand/../../../../../staging_dir/toolchain-mips_r2_gcc-4.3.3+cs_uClibc-0.9.30.1_2_6_32/usr/bin/mips-*linux-
+ARCH=mips
+CONFIG_HW_PCI=

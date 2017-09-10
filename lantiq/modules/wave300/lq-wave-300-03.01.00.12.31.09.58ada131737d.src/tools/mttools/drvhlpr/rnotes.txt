@@ -1,0 +1,199 @@
+Version 3.1.0.12.28, 2011-08-03
+- WAVE300_SW-198 fixed: Memory leak in mtlk_cli_server 
+- WAVE300_SW-386 fixed: Can't operate MAC Emulator over UGW platform(VRX GRX ARX)
+- WAVE300_SW-14 fixed: Wave 300 : Data rate shown on device association page is wrong
+- WLS-3225 fixed: memory leak in driver helper fixed
+
+Version 3.1.0.11.12, 2010-11-07
+- WLS-3181 fixed: DrvHlpr is not stopped properly
+- WLS-3175 fixed: BCL tftp_get command does not work on VB300
+
+Version 3.1.0.11.11, 2010-11-03
+- WLS-3177 fixed: DRVHLPR default WDS/LEDs compilation options
+
+Version 3.1.0.11.10, 2010-10-31
+- WLS-3136 fixed: drvhlpr application socket creation fails
+
+Version 3.1.0.11.8, 2010-10-20
+- WLS-3122 fixed: Please, upgrade vb300 toolchain and release the version
+
+Version 3.1.0.7.1, 2010-07-14
+- WLS-2872 done: add bcl_util.tcl to release package
+
+Version 3.1.0.7.0, 2010-07-13
+- WLS-2869 done: BCL Server build/release to be integrated to MTools package
+
+Version 3.1.0.6.8, 2010-07-04
+- WLS-2845 fixed: DRV & APP: Memory Alarm mechanism to be implemented
+
+Version 3.1.0.6.7, 2010-06-30
+- WLS-2826 fixed: Add GPB316 target (VB300) to supported wireless driver targets
+
+Version 3.1.0.6.5, 2010-06-29
+- WLS-2594 fixed: drvhlpr can´t be run with driver which was built with USE_GENL option
+
+Version 3.1.0.6.4, 2010-06-24
+- WLS-2808 fixed: default for "Enable WPS LEDs" option should be - YES
+
+Version 3.1.0.6.3, 2010-06-23
+- WLS-568 fixed: obsolete socket (PF_INET,SOCK_PACKET) usage
+
+Version 3.1.0.6.1, 2010-06-17
+- WLS-2681 fixed: Driver implementation: Private LBF to support 16 CCD values and 16 Matrix indexes
+
+Version 3.1.0.5.4, 2010-06-03
+- WLS-2727 fixed: ARX driver/mttools to be added to release system
+
+Version 3.1.0.9.0, 2010-05-20
+- WLS-2480 implemented: configuration for LEDs and WPS components can can be enabled/disabled using "wps_script_path" parameter
+- WLS-2480 partially implemented: LEDs and WPS components added to build system as features 
+- WLS-2650 fixed: Logger printouts cause a lot of changes due to continuous SID changes in SVN
+
+Version 3.1.0.1.2, 2010-03-22
+- WLS-2571 fixed: Can't configure manually matrix and CDD values through the sRFMgmtDefData
+
+Version 3.1.0.1.1, 2010-03-18
+- WLS-2535 fixed: LBF: Driver/App implementation
+- WLS-2492 fixed: kernel's gconfig/menuconfig usage for MTLK components build
+
+Version 3.1.0.0.1, 2010-02-28
+- WLS-1784 fixed: Application layer memory leaks/overwrites detection system requires
+- WLS-2367 fixed: Convenient application logging mechanism is required
+- Additional fix for graceful exit on SIGTERM (signal-processing thread creation)
+- WLS-1784 phase 4: Application layer memory leaks/overwrites detection system requires (graceful SIGTERM handling support)
+- WLS-1784 phase 3: Application layer memory leaks/overwrites detection system requires (cleanup)
+- WLS-1784 phase 2: Application layer memory leaks/overwrites detection system requires (basic MTLK CLI integration)
+- WLS-1773 additional fix: Antenna Selection Driver merge to 2.3.10
+- WLS-2133 fixed: Fix WLAN LEDs to be like in VB 2.3.5: Turn on LEDs as soon as interface is up
+- WLS-2152 implemented: move WPS thread to be component of drvhlpr
+- WLS-2114 implemented: move led handling application to be a component in the drvhlpr
+- WLS-2100 implemented: drvhlpr change to control LEDs behaviour via conf file
+
+Version - 2.5.2, 2008-09-10
+- WLS-1311 fixed: drvhlpr should handle wps events for Dongle also
+- WLS-1845 fixed: drvhlpr: Antenna Selection parameters support
+- WLS-1784 fixed: Application layer memory leaks/overwrites detection system requires
+- WLS-1773 fixed: Antenna Selection component introduced
+- WLS-1773 partally fixed: Antenna Selection merge to 2.3.10 (IRB introduced)
+- WLS-1608 additional fix: config eth1 only if exist.
+
+Version - 2.5.1, 2008-06-01
+- WLS-1608 regression fixed: drvhlpr ERROR on sending fake ARP packets
+- DATAEX protocol version changed
+- WLS-1635 partially implemented: updated usage information, minor typo fixes and clean up in log messages 
+
+Version - 2.5.0, 2008-05-25
+- a fix to WLS-1051 fixed. Eliminate drvhlpr Segmentation fault on non-dual
+  band.
+- WLS-1608 fixed: drvhlpr ERROR on sending fake ARP packets
+
+Version - 2.4.0, 2008-05-18
+- LEDs change request open mode and wep:
+	wep led behaviour is as open mode.
+	for open mode/wep, after WPS complete solid led-on 2 min.
+	blink error only in overlap error, other errors has led on.
+- AP set WLS led when link is up 
+- WLS-1580 partially fixed (drvhlpr error fix): dvhlpr errors after restore AP/STA defaults and STAs can't connect to AP
+
+Version - 2.3.3, 2009-05-13
+- drvhlpr input (command line and file names/paths) are now read from conf file
+- WLS-1051 fixed: memory leak on dual-band STA
+
+Version - 2.3.2, 2009-02-02
+- WLS-772: add a fix to "Memory leaks in AP" bug.
+
+Version - 2.3.1, 2009-01-27
+- fix WLS-873: drvhlpr should close HW.ini
+
+Version - 2.3.0, 2008-12-25
+- disable the call to wpa cli in AP.
+- another fix to WLS-736: dhcp should not be called during WPS process.
+  Work with the wpa cli in order to detect data link (wpa completed).
+- another fix to WLS-757: support WPS crash in terms of LEDs indication.
+  Close wps file also if miss signal on wps application close/crash, and more.
+- fix WLS-757: support WPS srash in terms of LEDs indication
+- implement WLS-736: dhcp should not be called during WPS process.
+- implement WLS-687: Add MAC capability to use gpio as output, for switch reset on Umedia board. The change is to supoprt new MAC, allow switch reset gpio activated by iwpriv (need new firmware).
+- fix WLS-678: drvhlpr doesn't report conenction up/down events to DHCP
+
+Version - 2.2.0, 2008-09-23
+- WLS-220 implemented: now tool is a part of mttools package.
+  Also it can be built separately using "make drvhlpr".
+- implement WLS 422: Driver helper should notify via script when WLS link status is changed.
+- eliminate setting to idle of the wps state if got error while open event file (pipe file).
+  The file is deleted in some cases and created again.
+- change interface name to local parameter (and its name)
+
+Version - 2.1.0, 2008-08-22
+- WLS-303 fixed: drvhlpr/mtdump wrong print format in driver_api.c
+- WLS-347 implemented: mtdump/drvhlpr should not use single WE ioctl to
+  SET/GET data
+
+Version - 2.0.0, 2008-07-30
+- receiving messages over Generic Netlink is supported, used
+  for Infineon AR9 (amazon) platform
+- new command (NL_DRV_CMD_MAN_FRAME) is added and ignored
+
+Version - 1.2.13, 2008-08-14
+- Change the WPS status to Idle when get USR1 signal (when close WPS fifo file)
+
+Version - 1.2.12, 2008-08-12
+- add support of new WPS error (invalid pin)
+- change the blink rate code for WPS activation
+- passing wlan0 interface to the drvhlpr for interface validation upon Init.
+  fix wrong definition and code cleanup.
+- add signals handler to work with modified WPS (close/reopen WPS files)
+
+Version - 1.2.11, 2008-07-07
+- rollback r4688: drvhlpr changed to work with ioctl of iwpriv gpio API
+  (the mtpriv command now work with packed one param, baseb and value)
+
+Version - 1.2.10, 2008-07-03
+- clean hung processes
+
+Version - 1.2.9, 2008-07-01
+- The drvhlpr is now reporting the events of the WPS to scripts
+
+Version - 1.2.8, 2008-06-30
+- delete unused parameter
+
+Version - 1.2.7, 2008-06-25
+- change leds control ioctl. It is now use the same as the iwpriv API use
+
+Version - 1.2.6, 2008-06-17
+- eliminate the use of wlan0.conf when possible:
+  read the SW Watchdog configuration from HW.ini, if it is not there read from wlan0.conf
+
+Version - 1.2.5, 2008-06-16
+- fix WLS-50-53: security leds related fix
+
+Version - 1.2.4, 2008-06-13
+- fix WLS-47: link led in multi-link mode
+
+Version - 1.2.3, 2008-06-12
+- fix drvhlpr to support two bands in baseband mode
+- fix WLS-43: link led problem in drvhlpr
+
+Version - 1.2.2, 2008-06-11
+- adding support to disable/enable WPS by loop over file open for LEDs events
+
+Version - 1.2.1, 2008-06-05
+- Minor LED behavior fixes
+
+Version - 1.2.0, 2008-06-05
+- adding security leds handling. Gets events also from WPS application.
+  Adding connectivity leds support through baseband.
+  Leds configuration is read from HW.ini file, other configurations from wlan0.conf.
+
+Version - 1.1.0, 2008-05-29
+- Added verbose error reporting to ioctl data exchange calls.
+
+Version - 1.0.2, 2008-05-23
+- bug #2735 fixed - search for interface accidently put in the while(1).
+  added close to the socket.
+
+Version - 1.0.1, 2008-03-26
+- Adding connectivity led support for Star
+
+Version - 1.0.0, 2008-02-28
+- Driver Helper utility created. Supported features are L2NAT and Watchdog
